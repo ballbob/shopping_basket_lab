@@ -7,10 +7,13 @@ describe('Item',function(){
 
   beforeEach(function(){
     item = new Item('pear',10,true)
-  })
+  });
 
   it('should have a name',function(){
     assert.strictEqual('pear',item.name)
-  })
+  });
 
+  it('should have a price', function() {
+    assert.strictEqual(10, item.price)
+  });
 })
