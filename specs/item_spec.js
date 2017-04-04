@@ -16,4 +16,8 @@ describe('Item',function(){
   it('should have a price', function() {
     assert.strictEqual(10, item.price)
   });
+
+  it('should be eliglible for bogof', function() {
+    assert.strictEqual(true, item.bogof)
+  })
 })
