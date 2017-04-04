@@ -1,6 +1,7 @@
 var ShoppingBasket = function(loyalty){
   this.listOfItems = new Array();
   this.loyalty = loyalty;
+  this.totalCost = 0;
 }
 
 ShoppingBasket.prototype = {
@@ -13,33 +14,33 @@ ShoppingBasket.prototype = {
   },
 
   totalPrice: function() {
-    var totalcost = 0
     for( var i = 0; i < this.listOfItems.length; i++) {
-        totalcost = totalcost + this.listOfItems[i].price
+        this.totalCost = this.totalCost + this.listOfItems[i].price
     }
-    return totalcost
+    return this.totalCost
   },
 
   discountPrice: function() {
-    var total = this.totalPrice();
-    if (total > 20){
-       total = total * 0.9
+    if (this.totalCost > 20){
+       this.totalCost = this.totalCost * 0.9
     }
-    return total;
+    return this.totalCost;
   },
 
   loyaltyPrice: function(){
-    var total = this.totalPrice();
     if (this.loyalty === true){
-      total = total * 0.95
+      this.totalCost = this.totalCost * 0.95
     }
-    return total;
+    return this.totalCost;
+  },
+
+  totalDiscount: function(){
+    this.totalPrice()
+    this.discountPrice()
+    this.loyaltyPrice()
+    return this.totalCost
   }
 
-  // totalDiscount: function(){
-  //   var total = totalPrice();
-    
-  // }
 }
 
 module.exports = ShoppingBasket;

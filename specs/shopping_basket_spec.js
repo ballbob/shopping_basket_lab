@@ -65,6 +65,11 @@ describe('Shopping basket', function() {
     assert.strictEqual(38,shoppingBasket.loyaltyPrice())
   })
 
-  // it('should apply both discounts')
+  it('should apply both discounts', function() {
+    shoppingBasket.add(pear)
+    shoppingBasket.add(banana)
+
+    assert.strictEqual(34, shoppingBasket.totalDiscount())
+  })
 
 })
