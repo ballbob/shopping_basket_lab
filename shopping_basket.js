@@ -38,7 +38,7 @@ ShoppingBasket.prototype = {
     this.totalPrice()
     this.discountPrice()
     this.loyaltyPrice()
-    return this.totalCost
+    return Math.floor(this.totalCost)
   }
 
 }

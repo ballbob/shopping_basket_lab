@@ -47,6 +47,7 @@ describe('Shopping basket', function() {
   it('should not apply discount below £20', function() {
     shoppingBasket.add(pear)
     shoppingBasket.add(orange)
+    shoppingBasket.totalPrice()
 
     assert.strictEqual(15, shoppingBasket.discountPrice())
   })
@@ -54,6 +55,7 @@ describe('Shopping basket', function() {
   it('should apply discount above £20', function(){
     shoppingBasket.add(pear)
     shoppingBasket.add(banana)
+    shoppingBasket.totalPrice()
 
     assert.strictEqual(36, shoppingBasket.discountPrice())
   })
@@ -61,6 +63,7 @@ describe('Shopping basket', function() {
   it('should apply discount to loyal customers',function(){
     shoppingBasket.add(pear)
     shoppingBasket.add(banana)
+    shoppingBasket.totalPrice()
 
     assert.strictEqual(38,shoppingBasket.loyaltyPrice())
   })
