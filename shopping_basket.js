@@ -5,6 +5,10 @@ var ShoppingBasket = function(){
 ShoppingBasket.prototype = {
   add: function(item){
     this.listOfItems.push(item);
+  },
+
+  remove: function() {
+    this.listOfItems.pop();
   }
 }
 

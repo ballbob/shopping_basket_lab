@@ -22,6 +22,13 @@ describe('Shopping basket', function() {
     shoppingBasket.add(pear)
 
     assert.strictEqual(pear,shoppingBasket.listOfItems[0])
+  }),
+
+  it('should remove items', function(){
+    shoppingBasket.add(banana)
+    shoppingBasket.remove()
+
+    assert.strictEqual(undefined, shoppingBasket.listOfItems[0])
   })
 
 })
