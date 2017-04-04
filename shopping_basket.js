@@ -17,6 +17,14 @@ ShoppingBasket.prototype = {
         totalcost = totalcost + this.listOfItems[i].price
     }
     return totalcost
+  },
+
+  discountPrice: function() {
+    var total = this.totalPrice();
+    if (total > 20){
+       total = basicTotal * 0.9
+    }
+    return total;
   }
 }
 
