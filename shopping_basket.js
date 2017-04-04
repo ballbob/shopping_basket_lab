@@ -22,7 +22,7 @@ ShoppingBasket.prototype = {
   discountPrice: function() {
     var total = this.totalPrice();
     if (total > 20){
-       total = basicTotal * 0.9
+       total = total * 0.9
     }
     return total;
   }

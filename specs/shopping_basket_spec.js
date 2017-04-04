@@ -50,4 +50,11 @@ describe('Shopping basket', function() {
     assert.strictEqual(15, shoppingBasket.discountPrice())
   })
 
+  it('should apply discount above £20', function(){
+    shoppingBasket.add(pear)
+    shoppingBasket.add(banana)
+
+    assert.strictEqual(36, shoppingBasket.discountPrice())
+  })
+
 })
