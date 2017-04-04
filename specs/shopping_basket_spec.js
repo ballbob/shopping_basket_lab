@@ -15,7 +15,8 @@ describe('Shopping basket', function() {
     banana = new Item('banana', 30, false);
     orange = new Item('orange', 5, true);
 
-    shoppingBasket = new ShoppingBasket()
+    shoppingBasket = new ShoppingBasket(true)
+    judasBasket = new ShoppingBasket(false)
   })
 
   it('should start empty', function() {
@@ -56,5 +57,14 @@ describe('Shopping basket', function() {
 
     assert.strictEqual(36, shoppingBasket.discountPrice())
   })
+
+  it('should apply discount to loyal customers',function(){
+    shoppingBasket.add(pear)
+    shoppingBasket.add(banana)
+
+    assert.strictEqual(38,shoppingBasket.loyaltyPrice())
+  })
+
+  // it('should apply both discounts')
 
 })
