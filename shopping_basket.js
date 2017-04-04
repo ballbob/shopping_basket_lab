@@ -9,6 +9,14 @@ ShoppingBasket.prototype = {
 
   remove: function() {
     this.listOfItems.pop();
+  },
+
+  totalPrice: function() {
+    var totalcost = 0
+    for( var i = 0; i < this.listOfItems.length; i++) {
+        totalcost = totalcost + this.listOfItems[i].price
+    }
+    return totalcost
   }
 }
 

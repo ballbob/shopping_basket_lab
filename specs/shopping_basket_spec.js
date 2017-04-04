@@ -35,4 +35,12 @@ describe('Shopping basket', function() {
     assert.strictEqual(undefined, shoppingBasket.listOfItems[0])
   })
 
+  it('should count the total price', function() {
+    shoppingBasket.add(pear)
+    shoppingBasket.add(banana)
+    shoppingBasket.add(orange)
+
+    assert.strictEqual(45, shoppingBasket.totalPrice())
+  })
+
 })
