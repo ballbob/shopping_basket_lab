@@ -18,6 +18,10 @@ describe('Shopping basket', function() {
     shoppingBasket = new ShoppingBasket()
   })
 
+  it('should start empty', function() {
+    assert.strictEqual(undefined, shoppingBasket.listOfItems[0])
+  })
+
   it('should add items',function(){
     shoppingBasket.add(pear)
 
